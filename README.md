@@ -2,6 +2,8 @@
 
 Official implementation of **RANKVIDEO**, a video-native reasoning reranker for text-to-video retrieval. RANKVIDEO explicitly reasons over query-video pairs using video content to assess relevance.
 
+🤗 [RankVideo](https://huggingface.co/hltcoe/RankVideo/tree/main)
+
 ## Overview
 
 RANKVIDEO is trained using a two-stage curriculum:
@@ -9,6 +11,8 @@ RANKVIDEO is trained using a two-stage curriculum:
 2. **Reranking Training**: Fine-tuning with pointwise, pairwise, and teacher distillation objectives
 
 Given a query-video pair, RANKVIDEO predicts relevance by comparing log-probabilities of discrete answer tokens, producing a scalar relevance score.
+
+
 
 ## Installation
 
