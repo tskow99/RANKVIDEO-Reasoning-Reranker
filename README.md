@@ -15,7 +15,7 @@ Given a query-video pair, RANKVIDEO predicts relevance by comparing log-probabil
 ```bash
 git clone https://github.com/tskow99/RANKVIDEO-Reasoning-Reranker.git
 cd RANKVIDEO-Reasoning-Reranker
-# TODO update requirements.txt 
+# TODO to use UV 
 pip install -r requirements.txt
 ```
 
@@ -26,7 +26,7 @@ Before running, update the paths in `config.py`:
 ```python
 # Model paths
 BASE_MODEL_ID = "Qwen/Qwen3-VL-8B-Instruct"
-HF_MODEL_PATH = "ORG/rankvideo-reranker"  # TO BE UPDATED
+HF_MODEL_PATH = "hltcoe/RankVideo"
 CACHE_DIR = "/path/to/model/cache"
 
 # Data paths
@@ -41,9 +41,8 @@ Download pretrained RANKVIDEO weights from HuggingFace (model weights not yet pu
 
 ```python
 from rankvideo import VLMReranker
-# TO BE UPDATED
 reranker = VLMReranker(
-    model_path="ORG/rankvideo-reranker",
+    model_path="hltcoe/RankVideo",
     cache_dir="/path/to/cache"
 )
 ```
@@ -57,7 +56,7 @@ Score query-video pairs for relevance:
 ```python
 from rankvideo import VLMReranker
 
-reranker = VLMReranker(model_path="ORG/rankvideo-reranker")
+reranker = VLMReranker(model_path="hltcoe/RankVideo")
 
 scores = reranker.score_batch(
     queries=["example query 1", "example query2"],
@@ -237,7 +236,7 @@ First-stage retrieval scores from OmniEmbed. Maps query IDs to candidate videos 
 2. **Run reranking** on the first-stage candidates:
 ```bash
 python -m rankvideo.rerank \
-    --model ORG/rankvideo-reranker \
+    --model hltcoe/RankVideo \
     --video2queries data/videos2queriesranking_AV_OmniEmbed.json \
     --video-dir /path/to/multivent/videos \
     --output-dir outputs/reranking
@@ -256,7 +255,7 @@ python -m rankvideo.evaluate \
 For training from scratch, we use the [MultiVENT 2.0](https://multivent.github.io/) dataset, a large-scale multilingual video retrieval benchmark.
 
 ## Citation
-# TO BE UPDATED
+# to be updated once published
 ```bibtex
 @inproceedings{rankvideo2026,
 
