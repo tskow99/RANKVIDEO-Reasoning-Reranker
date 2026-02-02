@@ -49,6 +49,10 @@ pip install vllm==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu12
 pip install transformers==4.57.1
 pip install "qwen-vl-utils[decord]==0.0.14"
 pip install jsonlines==4.0.0 tqdm==4.67.1
+pip install pytrec_eval-terrier
+pip install trl
+pip install peft
+pip install bitsandbytes
 ```
 
 ## Configuration

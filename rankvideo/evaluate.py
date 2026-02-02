@@ -90,6 +90,9 @@ def collect_predictions(pred_dir, needed_qids, score_field="p_yes"):
                     elif "logit_delta" in fields:
                         scores[qid][docid] = float(fields["logit_delta"])
                         n_pairs += 1
+                    elif "logit_delta_yes_minus_no" in fields:
+                        scores[qid][docid] = float(fields["logit_delta_yes_minus_no"])
+                        n_pairs += 1
 
     print(f"[preds] files={n_files} pairs={n_pairs}")
     return scores

@@ -86,6 +86,7 @@ def get_teacher_p_yes(ex):
             return float(meta["teacher_p_yes"])
         except Exception:
             return None
+    ex["teacher_p_yes"] = None
     return None
 
 
