@@ -19,8 +19,36 @@ Given a query-video pair, RANKVIDEO predicts relevance by comparing log-probabil
 ```bash
 git clone https://github.com/tskow99/RANKVIDEO-Reasoning-Reranker.git
 cd RANKVIDEO-Reasoning-Reranker
-# TODO to use UV 
-pip install -r requirements.txt
+```
+
+### Create Conda Environment
+
+```bash
+conda create -n RankVideo python=3.12 pip -y
+conda activate RankVideo
+```
+
+### Install Dependencies
+
+Below is the minimum set up dependencies that should allow for running inference code.
+
+```bash
+# Upgrade pip and core tools
+python -m pip install -U pip setuptools wheel
+
+# Install ffmpeg via conda
+conda install -c conda-forge -y ffmpeg
+
+# Install PyTorch with CUDA 12.8 support
+pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
+
+# Install vLLM for efficient inference
+pip install vllm==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu128
+
+# Install remaining dependencies
+pip install transformers==4.57.1
+pip install "qwen-vl-utils[decord]==0.0.14"
+pip install jsonlines==4.0.0 tqdm==4.67.1
 ```
 
 ## Configuration

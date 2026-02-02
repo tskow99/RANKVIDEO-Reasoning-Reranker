@@ -17,17 +17,19 @@ except ImportError:
     VLLM_AVAILABLE = False
 
 
+
 SYSTEM_PROMPT = (
     "You are a helpful assistant specialized in video and text understanding. "
-    "Given a text query and a video, your task is to determine if the video is relevant to the query. "
-    "Respond with <answer>yes</answer> if the video is relevant, or <answer>no</answer> if it is not."
+    + "Given a text query and a video, your task is to determine if the video is relevant to the query. "
+    + "Respond with <answer>yes</answer> if the video is relevant, or <answer>no</answer> if it is not. "
 )
-
+ 
 USER_PROMPT = (
     "Query: {query}\n"
-    "Is the video relevant to the query? "
-    "Respond with <answer>yes</answer> or <answer>no</answer>."
+    + "Is the video relevant to the query? "
+    + "Respond with <answer>yes</answer> or <answer>no</answer>."
 )
+
 
 DEFAULT_FPS = 2.0
 DEFAULT_MAX_FRAMES = 32
@@ -88,6 +90,7 @@ class VLMReranker:
         
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, cache_dir=cache_dir)
         self.processor = AutoProcessor.from_pretrained(model_path, cache_dir=cache_dir)
+        vocab_size = self.tokenizer.vocab_size
         
         self.llm = LLM(
             model=model_path,
@@ -96,7 +99,7 @@ class VLMReranker:
             tensor_parallel_size=tensor_parallel_size,
             trust_remote_code=True,
             enable_prefix_caching=True,
-            max_logprobs=self.tokenizer.vocab_size
+            max_logprobs=vocab_size
         )
         
         self.yes_ids = []
