@@ -73,7 +73,7 @@ VIDEO_DIR = "/path/to/videos"
 
 ## Pretrained Weights
 
-Download pretrained RANKVIDEO weights from HuggingFace (model weights not yet published):
+Download pretrained [RANKVIDEO weights](https://huggingface.co/hltcoe/RankVideo/tree/main) from HuggingFace:
 
 ```python
 from rankvideo import VLMReranker
@@ -293,8 +293,14 @@ For training from scratch, we use the [MultiVENT 2.0](https://multivent.github.i
 ## Citation
 # to be updated once published
 ```bibtex
-@inproceedings{rankvideo2026,
-
+@misc{skow2026rankvideoreasoningrerankingtexttovideo,
+      title={RANKVIDEO: Reasoning Reranking for Text-to-Video Retrieval}, 
+      author={Tyler Skow and Alexander Martin and Benjamin Van Durme and Rama Chellappa and Reno Kriz},
+      year={2026},
+      eprint={2602.02444},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2602.02444}, 
 }
 ```
 
