@@ -111,7 +111,7 @@ for score in scores:
 
 ```bash
 python -m rankvideo.rerank \
-    --model ORG/rankvideo-reranker \
+    --model hltcoe/RankVideo \
     --video2queries data/video2queries.json \
     --query-mapping data/queries.tsv \
     --video-dir /path/to/videos \
