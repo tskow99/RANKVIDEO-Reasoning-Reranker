@@ -5,7 +5,7 @@ Official implementation of **RANKVIDEO**, a video-native reasoning reranker for 
 [![arXiv](https://img.shields.io/badge/arXiv-2602.02444-b31b1b.svg)](https://arxiv.org/abs/2602.02444)
 
 
-🤗 [RankVideo](https://huggingface.co/hltcoe/RankVideo/tree/main)
+🤗 [RankVideo](https://huggingface.co/hltcoe/RankVideo/tree/main) | [Synthetic Data](https://huggingface.co/datasets/hltcoe/RankVideo-Dataset)
 
 ## Overview
 
